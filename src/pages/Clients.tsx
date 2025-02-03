@@ -96,7 +96,6 @@ const Clients = () => {
                 />
               </div>
               <h3 className="text-lg font-semibold text-center mb-2">{client.name}</h3>
-              <p className="text-gray-600 text-center text-sm">{client.description}</p>
             </div>
           ))}
         </div>
