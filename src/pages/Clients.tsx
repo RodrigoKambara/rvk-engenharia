@@ -4,7 +4,7 @@ const Clients = () => {
   const clients = [
     {
       name: "Stetsom",
-      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738601967/Stetsom_btdt57.jpg"
+      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738614659/Stetsom_eyzcfn.jpg"
     },
     {
       name: "Unimed",
@@ -16,7 +16,7 @@ const Clients = () => {
     },
     {
       name: "Oeste Saúde",
-      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738603175/oestesaude_vgktiz.jpg"
+      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738614778/oestesaude_umnjk4.jpg"
     },
     {
       name: "Palmali",
@@ -24,7 +24,7 @@ const Clients = () => {
     },
     {
       name: "SOESP",
-      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738606969/soesp_zhmweh.png"
+      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738614855/soesp_egikid.png"
     },
     {
       name: "Better Beef",
@@ -36,7 +36,7 @@ const Clients = () => {
     },
     {
       name: "Bon-Mart",
-      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738607847/bonmart_czknbx.png"
+      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738614582/bonmart_i4oy9r.png"
     },
     {
       name: "Andorinha",
@@ -44,7 +44,7 @@ const Clients = () => {
     },
     {
       name: "Lider",
-      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738608179/lider_klscic.png"
+      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738614397/lider_1_jhcfhw.png"
     },
     {
       name: "Jandaia",
@@ -63,7 +63,7 @@ const Clients = () => {
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-4">Nossos Clientes</h1>
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-          Orgulhamo-nos de atender algumas das maiores empresas do Brasil, 
+          Nos orgulhamos de atender algumas das maiores empresas do Brasil, 
           fornecendo serviços de excelência em inspeções e segurança industrial.
         </p>
 
@@ -105,12 +105,12 @@ const Clients = () => {
           <h2 className="text-2xl font-bold text-center mb-8">Por que as empresas confiam na RVK?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">100+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">200+</div>
               <p className="text-gray-600">Clientes Atendidos</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
-              <p className="text-gray-600">Inspeções Realizadas</p>
+              <div className="text-4xl font-bold text-blue-600 mb-2">2000+</div>
+              <p className="text-gray-600">Serviços Prestados</p>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
