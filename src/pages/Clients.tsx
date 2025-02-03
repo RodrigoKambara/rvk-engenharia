@@ -59,18 +59,18 @@ const Clients = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-gray-50 py-8 md:py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-4">Nossos Clientes</h1>
-        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Nossos Clientes</h1>
+        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8 md:mb-12">
           Nos orgulhamos de atender algumas das maiores empresas do Brasil, 
           fornecendo serviços de excelência em inspeções e segurança industrial.
         </p>
 
         {/* Testimonial Section */}
-        <div className="bg-blue-900 text-white rounded-lg p-8 mb-16">
+        <div className="bg-blue-900 text-white rounded-lg p-6 md:p-8 mb-8 md:mb-16">
           <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-xl italic mb-4">
+            <blockquote className="text-lg md:text-xl italic mb-4">
               "A RVK Engenharia tem sido uma parceira fundamental em nossas operações, 
               garantindo a segurança e conformidade de nossos equipamentos com as normas vigentes."
             </blockquote>
@@ -80,11 +80,11 @@ const Clients = () => {
         </div>
 
         {/* Clients Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-16">
           {clients.map((client, index) => (
             <div 
               key={index}
-              className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center justify-center transform transition-transform hover:scale-105"
+              className="bg-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col items-center justify-center transform transition-transform hover:scale-105"
             >
               <div className="h-16 flex items-center justify-center mb-4">
                 <img 
@@ -101,9 +101,9 @@ const Clients = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-center mb-8">Por que as empresas confiam na RVK?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-center mb-6 md:mb-8">Por que as empresas confiam na RVK?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">200+</div>
               <p className="text-gray-600">Clientes Atendidos</p>

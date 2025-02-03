@@ -127,7 +127,7 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-gray-50 py-8 md:py-16">
       <div className="container mx-auto px-4">
         <Link to="/servicos" className="text-blue-600 hover:text-blue-800 flex items-center gap-2 mb-8">
           <ArrowLeft size={20} />
@@ -139,27 +139,27 @@ const ServiceDetail = () => {
             <img 
               src={service.image} 
               alt={service.title}
-              className="w-full h-96 object-cover"
+              className="w-full h-64 md:h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 text-white">
               <div className="flex items-center gap-3 mb-4">
-                {Icon && <Icon size={32} className="text-blue-400" />}
-                <h1 className="text-4xl font-bold">{service.title}</h1>
+                {Icon && <Icon size={24} className="text-blue-400" />}
+                <h1 className="text-2xl md:text-4xl font-bold">{service.title}</h1>
               </div>
-              <p className="text-lg text-gray-100">{service.description}</p>
+              <p className="text-base md:text-lg text-gray-100">{service.description}</p>
             </div>
           </div>
           
-          <div className="p-8">
+          <div className="p-4 md:p-8">
             <div className="max-w-3xl mx-auto">
               <div className="prose max-w-none">
-                <p className="text-lg text-gray-700 mb-8">
+                <p className="text-base md:text-lg text-gray-700 mb-8">
                   {service.fullDescription}
                 </p>
 
-                <div className="bg-gray-50 rounded-xl p-6 mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">O que incluímos</h2>
+                <div className="bg-gray-50 rounded-xl p-4 md:p-6 mb-8">
+                  <h2 className="text-xl md:text-2xl font-semibold mb-4">O que incluímos</h2>
                   <ul className="grid gap-3">
                     {service.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-3">
@@ -170,15 +170,15 @@ const ServiceDetail = () => {
                   </ul>
                 </div>
 
-                <div className="bg-blue-50 rounded-xl p-6 mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Informações Adicionais</h2>
+                <div className="bg-blue-50 rounded-xl p-4 md:p-6 mb-8">
+                  <h2 className="text-xl md:text-2xl font-semibold mb-4">Informações Adicionais</h2>
                   <p className="text-gray-700">{service.additionalInfo}</p>
                 </div>
 
                 <div className="flex justify-center">
                   <Link
                     to="/contato"
-                    className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
+                    className="inline-block bg-blue-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg hover:bg-blue-700 transition-colors text-base md:text-lg font-semibold"
                   >
                     Solicitar este serviço
                   </Link>

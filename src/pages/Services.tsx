@@ -44,15 +44,15 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-gray-50 py-8 md:py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-4">Nossos Serviços</h1>
-        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Nossos Serviços</h1>
+        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8 md:mb-12">
           Oferecemos serviços de inspeções de segurança e treinamentos, garantindo a conformidade
           com as normas NR-13 e NR-12 e a segurança do seu ambiente industrial.
         </p>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
           {services.map((service) => (
             <div
               key={service.id}
@@ -62,11 +62,11 @@ const Services = () => {
               <img 
                 src={service.image} 
                 alt={service.title}
-                className="w-full h-64 object-cover"
+                className="w-full h-48 md:h-64 object-cover"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+              <div className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base">{service.description}</p>
               </div>
             </div>
           ))}
