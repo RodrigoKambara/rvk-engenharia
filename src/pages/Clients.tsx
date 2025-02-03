@@ -8,7 +8,7 @@ const Clients = () => {
     },
     {
       name: "Unimed",
-      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738601824/unimed_ei8ylu.png"
+      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738614996/unimed_adwo2m.png"
     },
     {
       name: "Funada",
