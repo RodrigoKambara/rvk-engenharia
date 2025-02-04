@@ -94,7 +94,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">Tipo de Inspeção</label>
+                <label className="block text-gray-700 mb-2">Tipo de Serviço</label>
                 <select
                   name="inspectionType"
                   value={formData.inspectionType}
@@ -102,10 +102,10 @@ const Contact = () => {
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
                   required
                 >
-                  <option value="">Selecione o tipo de inspeção</option>
+                  <option value="">Selecione o tipo de serviço</option>
                   <option value="nr12">NR-12 - Segurança em Máquinas</option>
-                  <option value="nr13">NR-13 - Vasos de Pressão e Caldeiras</option>
-                  <option value="ambos">Ambas as inspeções</option>
+                  <option value="nr13">NR-13 - Vasos de Pressão, Caldeiras, Tubulações, Tanques</option>
+                  <option value="ambos">Ambos os serviços</option>
                 </select>
               </div>
               <div>
