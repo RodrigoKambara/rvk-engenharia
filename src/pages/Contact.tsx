@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
+import InputMask from 'react-input-mask';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     inspectionType: '',
     message: ''
   });
@@ -31,6 +33,7 @@ const Contact = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
+          from_phone: formData.phone, // Adicionando o telefone ao envio
           inspection_type: formData.inspectionType,
           message: formData.message,
           to_email: 'comercial@rvk.eng.com' // Email de destino
@@ -43,6 +46,7 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
+          phone: '',
           inspectionType: '',
           message: ''
         });
@@ -90,6 +94,19 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
                   placeholder="seu@email.com"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 mb-2">Telefone</label>
+                <InputMask
+                  mask="(99) 99999-9999"
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  placeholder="(00) 00000-0000"
                   required
                 />
               </div>
