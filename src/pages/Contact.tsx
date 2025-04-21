@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MessageCircle, MapPin, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import InputMask from 'react-input-mask';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -151,13 +152,22 @@ const Contact = () => {
           <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-6">Informações de Contato</h2>
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <Phone className="text-blue-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold">Telefone</h3>
-                  <p className="text-gray-600">(18) 99142-7407</p>
-                </div>
+            <div className="flex items-start gap-4">
+              <a
+                href="https://wa.me/5518991427407?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20inspeções."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-500 mt-1"
+                title="Fale conosco no WhatsApp"
+              >
+                <FaWhatsapp className="w-6 h-6" />
+              </a>
+              <div>
+                <h3 className="font-semibold">WhatsApp</h3>
+                <p className="text-gray-600">(18) 99142-7407</p>
               </div>
+            </div>
+
               <div className="flex items-start gap-4">
                 <Mail className="text-blue-600 mt-1" />
                 <div>
