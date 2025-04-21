@@ -5,11 +5,19 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://rvk.eng.br/contato</loc>
+    <loc>https://rvk.eng.br/sobre</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://rvk.eng.br/sobre</loc>
+    <loc>https://rvk.eng.br/servicos</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://rvk.eng.br/treinamentos</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rvk.eng.br/contato</loc>
     <priority>0.80</priority>
   </url>
 </urlset>
