@@ -3,11 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Services from './pages/Services';
-import ServiceDetail from './pages/ServiceDetail';
 import Clients from './pages/Clients';
 import Contact from './pages/Contact';
-import ServicesNR12 from './pages/ServicesNR12';
-import ServicesNR12Detail from './pages/ServicesNR12Detail';
+import Footer from './components/Footer';
+import ServicosNR11 from './pages/ServicosNR11';
+import ServicosNR12 from './pages/ServicosNR12';
+import ServicosNR13 from './pages/ServicosNR13';
+import ServicosNR15 from './pages/ServicosNR15';
+import ServicosNR18 from './pages/ServicosNR18';
+import ServicosNR35 from './pages/ServicosNR35';
+import Sobre from './pages/Sobre';
+
 
 function App() {
   return (
@@ -17,12 +23,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicos" element={<Services />} />
-          <Route path="/servicos/:id" element={<ServiceDetail />} />
-          <Route path="/servicos-nr12" element={<ServicesNR12 />} />
-          <Route path="/servicos-nr12/:id" element={<ServicesNR12Detail />} />
           <Route path="/clientes" element={<Clients />} />
           <Route path="/contato" element={<Contact />} />
+          <Route path="/sobre" element={<Sobre />} />
+            <Route path="/servicos/nr11" element={<ServicosNR11 />} />
+            <Route path="/servicos/nr12" element={<ServicosNR12 />} />
+            <Route path="/servicos/nr13" element={<ServicosNR13 />} />
+            <Route path="/servicos/nr15" element={<ServicosNR15 />} />
+            <Route path="/servicos/nr18" element={<ServicosNR18 />} />
+            <Route path="/servicos/nr35" element={<ServicosNR35 />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

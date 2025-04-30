@@ -41,18 +41,28 @@ const Home = () => {
       id: 'nr35',
       title: 'Inspeções e treinamentos conforme NR-35',
       description: 'Treinamentos, procedimentos e análise de riscos para trabalhos em altura, assegurando a proteção dos trabalhadores.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop'
     }
   ];
 
+  // Ordenar os serviços em ordem crescente (NR-11, NR-12, etc.)
+  const sortedServices = [...services].sort((a, b) => {
+    const numA = parseInt(a.id.replace('nr', ''));
+    const numB = parseInt(b.id.replace('nr', ''));
+    return numA - numB;
+  });
+
+  const cardsPerSlide = 2;
+  const totalSlides = Math.ceil(sortedServices.length / cardsPerSlide);
+
   // Função para avançar o slide
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
   };
 
   // Função para voltar o slide
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   };
 
   // Auto-play do carrossel
@@ -92,7 +102,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Services Carousel - Substituindo os cards por um carrossel */}
+      {/* Services Carousel - Modificado para exibir 2 cards por vez */}
       <div className="container mx-auto py-12 md:py-16 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
           Nossos Serviços
@@ -114,28 +124,32 @@ const Home = () => {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {services.map((service, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-4">
-                  <Link to={`/servicos-${service.id}`} className="group block">
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform group-hover:scale-105">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-48 md:h-64 object-cover"
-                      />
-                      <div className="p-4 md:p-6">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2">
-                          {service.title}
-                        </h3>
-                        <p className="text-gray-600 mb-4 text-sm md:text-base">
-                          {service.description}
-                        </p>
-                        <span className="text-blue-600 group-hover:text-blue-800 flex items-center gap-2 text-sm md:text-base">
-                          Saiba mais <ArrowRight size={16} />
-                        </span>
-                      </div>
+              {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                <div key={slideIndex} className="w-full flex-shrink-0 px-4 flex gap-4">
+                  {sortedServices.slice(slideIndex * cardsPerSlide, (slideIndex * cardsPerSlide) + cardsPerSlide).map((service) => (
+                    <div key={service.id} className="w-1/2">
+                      <Link to={`/servicos/${service.id}`} className="group block">
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform group-hover:scale-105 h-full">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-full h-48 md:h-64 object-cover"
+                          />
+                          <div className="p-4 md:p-6">
+                            <h3 className="text-lg md:text-xl font-semibold mb-2">
+                              {service.title}
+                            </h3>
+                            <p className="text-gray-600 mb-4 text-sm md:text-base">
+                              {service.description}
+                            </p>
+                            <span className="text-blue-600 group-hover:text-blue-800 flex items-center gap-2 text-sm md:text-base">
+                              Saiba mais <ArrowRight size={16} />
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
                     </div>
-                  </Link>
+                  ))}
                 </div>
               ))}
             </div>
@@ -151,7 +165,7 @@ const Home = () => {
           
           {/* Indicadores */}
           <div className="flex justify-center mt-8 gap-2">
-            {services.map((_, index) => (
+            {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
