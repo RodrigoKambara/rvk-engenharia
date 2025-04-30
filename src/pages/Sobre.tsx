@@ -1,9 +1,22 @@
 import React from 'react';
 import { ArrowRight, CheckCircle, Users, Award, Target, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
   return (
+    <>
+      <Helmet>
+        <title>Sobre a RVK Engenharia | Empresa de Engenharia Mecânica e Segurança do Trabalho</title>
+        <meta name="description" content="Conheça a RVK Engenharia, empresa especializada em engenharia mecânica e segurança do trabalho em Presidente Prudente. Nossa história, missão, visão e valores." />
+        <meta name="keywords" content="RVK Engenharia, empresa de engenharia Presidente Prudente, engenharia mecânica, segurança do trabalho, história da empresa, equipe técnica" />
+        <link rel="canonical" href="https://rvk.eng.br/sobre/" />
+        <meta property="og:title" content="Sobre a RVK Engenharia | Empresa de Engenharia Mecânica e Segurança do Trabalho" />
+        <meta property="og:description" content="Conheça a RVK Engenharia, empresa especializada em engenharia mecânica e segurança do trabalho em Presidente Prudente. Nossa história, missão, visão e valores." />
+        <meta property="og:url" content="https://rvk.eng.br/sobre/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div
@@ -238,6 +251,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,9 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, Wrench, FileText } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const ServicosNR12 = () => {
   return (
+    <>
+      <Helmet>
+        <title>Inspeções e Treinamentos NR-12 | Segurança em Máquinas | RVK Engenharia</title>
+        <meta name="description" content="Inspeção de segurança em máquinas e equipamentos conforme NR-12. Laudos técnicos, ART, análise de riscos e adequação de maquinário em Presidente Prudente e região." />
+        <meta name="keywords" content="NR-12, segurança em máquinas, laudo NR-12, adequação de máquinas, análise de risco, proteções de máquinas, Presidente Prudente" />
+        <link rel="canonical" href="https://rvk.eng.br/servicos/nr-12/" />
+        <meta property="og:title" content="Inspeções e Treinamentos NR-12 | Segurança em Máquinas | RVK Engenharia" />
+        <meta property="og:description" content="Inspeção de segurança em máquinas e equipamentos conforme NR-12. Laudos técnicos, ART, análise de riscos e adequação de maquinário." />
+        <meta property="og:url" content="https://rvk.eng.br/servicos/nr-12/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         {/* Cabeçalho */}
@@ -155,6 +168,7 @@ const ServicosNR12 = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,9 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Users, FileText, Shield } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const ServicosNR35 = () => {
   return (
+    <>
+      <Helmet>
+        <title>Inspeções e Treinamentos NR-35 | Trabalho em Altura | RVK Engenharia</title>
+        <meta name="description" content="Treinamentos, procedimentos e análise de riscos para trabalhos em altura conforme NR-35. Certificação e documentação completa em Presidente Prudente e região." />
+        <meta name="keywords" content="NR-35, trabalho em altura, treinamento NR-35, análise de risco, equipamentos para altura, certificação NR-35, Presidente Prudente" />
+        <link rel="canonical" href="https://rvk.eng.br/servicos/nr-35/" />
+        <meta property="og:title" content="Inspeções e Treinamentos NR-35 | Trabalho em Altura | RVK Engenharia" />
+        <meta property="og:description" content="Treinamentos, procedimentos e análise de riscos para trabalhos em altura conforme NR-35. Certificação e documentação completa." />
+        <meta property="og:url" content="https://rvk.eng.br/servicos/nr-35/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         {/* Cabeçalho */}
@@ -155,6 +168,7 @@ const ServicosNR35 = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

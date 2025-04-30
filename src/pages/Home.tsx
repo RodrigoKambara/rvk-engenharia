@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -99,6 +100,18 @@ const Home = () => {
   }, [currentSlide]);
 
   return (
+    <>
+      <Helmet>
+        <title>RVK Engenharia | Inspeções e Treinamentos NR-11, NR-12, NR-13, NR-15, NR-18, NR-35</title>
+        <meta name="description" content="Especialistas em engenharia mecânica e segurança do trabalho. Realizamos inspeções técnicas e treinamentos para NR-11, NR-12, NR-13, NR-15, NR-18 e NR-35 em Presidente Prudente e região. Solicite um orçamento!" />
+        <meta name="keywords" content="inspeção NR-13 Presidente Prudente, laudos técnicos, vasos de pressão, treinamentos NR-13, NR-12, NR-35, RVK Engenharia, engenharia mecânica, segurança do trabalho" />
+        <link rel="canonical" href="https://rvk.eng.br/" />
+        <meta property="og:title" content="RVK Engenharia | Inspeções e Treinamentos NR-11, NR-12, NR-13, NR-15, NR-18, NR-35" />
+        <meta property="og:description" content="Especialistas em engenharia mecânica e segurança do trabalho. Inspeções técnicas e treinamentos para adequação às normas regulamentadoras em Presidente Prudente e região." />
+        <meta property="og:url" content="https://rvk.eng.br/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section com efeito de zoom */}
       <div
@@ -232,6 +245,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,9 +1,22 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, FileText, Users, Calendar } from 'lucide-react';
 
 const ServicosNR11 = () => {
   return (
+    <>
+      <Helmet>
+        <title>Inspeções e Treinamentos NR-11 | Movimentação de Cargas | RVK Engenharia</title>
+        <meta name="description" content="Serviços especializados em inspeção e adequação de equipamentos de transporte e movimentação de cargas conforme NR-11. Empilhadeiras, guindastes e elevadores em Presidente Prudente e região." />
+        <meta name="keywords" content="NR-11, inspeção empilhadeiras, movimentação de cargas, transporte de materiais, treinamento operador empilhadeira, Presidente Prudente" />
+        <link rel="canonical" href="https://rvk.eng.br/servicos/nr-11/" />
+        <meta property="og:title" content="Inspeções e Treinamentos NR-11 | Movimentação de Cargas | RVK Engenharia" />
+        <meta property="og:description" content="Serviços especializados em inspeção e adequação de equipamentos de transporte e movimentação de cargas conforme NR-11. Empilhadeiras, guindastes e elevadores." />
+        <meta property="og:url" content="https://rvk.eng.br/servicos/nr-11/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         {/* Cabeçalho */}
@@ -144,6 +157,7 @@ const ServicosNR11 = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

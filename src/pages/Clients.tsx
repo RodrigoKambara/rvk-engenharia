@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Clients = () => {
   const clients = [
@@ -59,6 +60,18 @@ const Clients = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Nossos Clientes | Empresas que Confiam na RVK Engenharia</title>
+        <meta name="description" content="Conheça as empresas que confiam nos serviços da RVK Engenharia para inspeções e treinamentos em normas regulamentadoras. Casos de sucesso em Presidente Prudente e região." />
+        <meta name="keywords" content="clientes RVK Engenharia, empresas atendidas, casos de sucesso, inspeções realizadas, depoimentos clientes, Presidente Prudente" />
+        <link rel="canonical" href="https://rvk.eng.br/clientes/" />
+        <meta property="og:title" content="Nossos Clientes | Empresas que Confiam na RVK Engenharia" />
+        <meta property="og:description" content="Conheça as empresas que confiam nos serviços da RVK Engenharia para inspeções e treinamentos em normas regulamentadoras." />
+        <meta property="og:url" content="https://rvk.eng.br/clientes/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50 py-8 md:py-16">
       <div className="container mx-auto px-4">
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Clientes que confiaram na RVK</h1>
@@ -120,6 +133,7 @@ const Clients = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

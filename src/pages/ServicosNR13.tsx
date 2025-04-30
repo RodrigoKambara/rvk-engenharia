@@ -1,9 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, AlertTriangle, Gauge, FileText } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const ServicosNR13 = () => {
   return (
+    <>
+      <Helmet>
+        <title>Inspeções e Treinamentos NR-13 | Caldeiras e Vasos de Pressão | RVK Engenharia</title>
+        <meta name="description" content="Inspeção completa de vasos de pressão, caldeiras, tanques e tubulações conforme NR-13. Laudos técnicos com ART e treinamentos certificados em Presidente Prudente e região." />
+        <meta name="keywords" content="NR-13, inspeção caldeiras, vasos de pressão, inspeção tubulações, laudo técnico NR-13, treinamento NR-13, Presidente Prudente" />
+        <link rel="canonical" href="https://rvk.eng.br/servicos/nr-13/" />
+        <meta property="og:title" content="Inspeções e Treinamentos NR-13 | Caldeiras e Vasos de Pressão | RVK Engenharia" />
+        <meta property="og:description" content="Inspeção completa de vasos de pressão, caldeiras, tanques e tubulações conforme NR-13. Laudos técnicos com ART e treinamentos certificados." />
+        <meta property="og:url" content="https://rvk.eng.br/servicos/nr-13/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         {/* Cabeçalho */}
@@ -155,6 +168,7 @@ const ServicosNR13 = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

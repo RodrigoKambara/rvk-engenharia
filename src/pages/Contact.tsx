@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import InputMask from 'react-input-mask';
 import { FaWhatsapp } from "react-icons/fa";
+import { Helmet } from 'react-helmet';
 
 interface FormData {
   name: string;
@@ -89,6 +90,18 @@ const Contact = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Entre em Contato | Solicite um Orçamento | RVK Engenharia</title>
+        <meta name="description" content="Entre em contato com a RVK Engenharia para solicitar orçamentos de inspeções e treinamentos. Atendemos Presidente Prudente e região com serviços de engenharia mecânica e segurança do trabalho." />
+        <meta name="keywords" content="contato RVK Engenharia, orçamento inspeção NR-13, orçamento NR-12, contato engenharia Presidente Prudente, solicitar inspeção" />
+        <link rel="canonical" href="https://rvk.eng.br/contato/" />
+        <meta property="og:title" content="Entre em Contato | Solicite um Orçamento | RVK Engenharia" />
+        <meta property="og:description" content="Entre em contato com a RVK Engenharia para solicitar orçamentos de inspeções e treinamentos. Atendemos Presidente Prudente e região." />
+        <meta property="og:url" content="https://rvk.eng.br/contato/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rvk.eng.br/og-image.jpg" />
+      </Helmet>
     <div className="min-h-screen bg-gray-50 py-8 md:py-16">
       <Toaster position="top-center" />
       <div className="container mx-auto px-4">
@@ -292,6 +305,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
