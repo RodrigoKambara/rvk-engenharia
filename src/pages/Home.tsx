@@ -116,7 +116,7 @@ const Home = () => {
       {/* Hero Section com efeito de zoom */}
       <div
         ref={heroRef}
-        className="h-[400px] md:h-[500px] relative overflow-hidden"
+        className="h-[400px] md:h-[700px] relative overflow-hidden"
       >
         <div 
           className="absolute inset-0 bg-cover bg-center transition-transform duration-10000"
@@ -137,7 +137,7 @@ const Home = () => {
                 to="/contato"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg inline-flex items-center gap-2 text-sm md:text-base"
               >
-                Solicitar Inspeção <ArrowRight size={20} />
+                Solicitar Orçamento <ArrowRight size={20} />
               </Link>
             </div>
           </div>
