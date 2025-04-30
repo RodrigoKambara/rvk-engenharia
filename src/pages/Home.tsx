@@ -131,8 +131,7 @@ const Home = () => {
             <div className="text-white max-w-2xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">RVK Engenharia</h1>
               <p className="text-lg md:text-xl mb-8">
-                Especialistas em inspeções NR-13 e NR-12. Garantindo a segurança
-                e conformidade do seu ambiente industrial.
+              Especialistas em engenharia mecânica e segurança do trabalho. Oferecemos inspeções técnicas e treinamentos para adequação às normas regulamentadoras em Presidente Prudente e região.
               </p>
               <Link
                 to="/contato"
