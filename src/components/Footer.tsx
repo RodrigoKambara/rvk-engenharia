@@ -17,7 +17,7 @@ const Footer = () => {
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Facebook size={20} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+              <a href="https://www.instagram.com/rvk_engenharia_mecanica/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Instagram size={20} />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
@@ -76,15 +76,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="text-gray-400 mr-3 mt-1 flex-shrink-0" size={18} />
-                <span className="text-gray-400">Av. Paulista, 1000 - Bela Vista, São Paulo - SP, 01310-100</span>
+                <span className="text-gray-400">Av. Coronel José Soares Marcondes, Presidente Prudente - SP, 19050-230</span>
               </li>
               <li className="flex items-center">
                 <Phone className="text-gray-400 mr-3 flex-shrink-0" size={18} />
-                <span className="text-gray-400">(11) 3456-7890</span>
+                <span className="text-gray-400">(18) 99142-7407</span>
               </li>
               <li className="flex items-center">
                 <Mail className="text-gray-400 mr-3 flex-shrink-0" size={18} />
-                <a href="mailto:contato@rvkengenharia.com.br" className="text-gray-400 hover:text-white">contato@rvkengenharia.com.br</a>
+                <a href="mailto:contato@rvkengenharia.com.br" className="text-gray-400 hover:text-white">comercial@rvk.eng.br</a>
               </li>
               <li className="flex items-center">
                 <Clock className="text-gray-400 mr-3 flex-shrink-0" size={18} />

@@ -4,7 +4,32 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [scale, setScale] = useState(1);
   const carouselRef = useRef(null);
+  const heroRef = useRef(null);
+
+  // Efeito de zoom na imagem
+  useEffect(() => {
+    // Inicia com escala 1 e aumenta gradualmente para 1.1
+    const startTime = Date.now();
+    const duration = 10000; // 10 segundos
+    const startScale = 1;
+    const endScale = 1.1;
+    
+    const animateZoom = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentScale = startScale + (endScale - startScale) * progress;
+      
+      setScale(currentScale);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animateZoom);
+      }
+    };
+    
+    requestAnimationFrame(animateZoom);
+  }, []);
 
   const services = [
     {
@@ -75,14 +100,19 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section - Mantido igual ao original */}
+      {/* Hero Section com efeito de zoom */}
       <div
-        className="h-[400px] md:h-[500px] bg-cover bg-center relative"
-        style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1737853006230-4c6b22418aea?q=80&w=2087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-        }}
+        ref={heroRef}
+        className="h-[400px] md:h-[500px] relative overflow-hidden"
       >
+        <div 
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-10000"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1737853006230-4c6b22418aea?q=80&w=2087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+            transform: `scale(${scale})`, // Apenas efeito de zoom, sem parallax
+            transformOrigin: 'center center'
+          }}
+        ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50">
           <div className="container mx-auto h-full flex items-center px-4">
             <div className="text-white max-w-2xl">
@@ -185,7 +215,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-md p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Sobre a RVK Engenharia</h2>
             <p className="text-gray-700 mb-6">
-              A RVK Engenharia é uma empresa especializada em segurança do trabalho, com foco em adequações às normas regulamentadoras. Com uma equipe de profissionais altamente qualificados, oferecemos soluções personalizadas para empresas de diversos segmentos, garantindo a segurança dos trabalhadores e o cumprimento da legislação.
+              A RVK Engenharia é uma empresa especializada em engenharia mecânica e segurança do trabalho, com foco em inspeções técnicas e treinamentos para adequação às normas regulamentadoras. Com uma equipe de profissionais altamente qualificados, oferecemos soluções personalizadas para empresas de diversos segmentos, garantindo a segurança dos trabalhadores e o cumprimento da legislação.
             </p>
             <p className="text-gray-700 mb-8">
               Nossa missão é promover ambientes de trabalho mais seguros e saudáveis, contribuindo para a redução de acidentes e doenças ocupacionais, através de serviços de excelência técnica e comprometimento com a qualidade.
