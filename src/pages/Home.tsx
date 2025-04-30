@@ -129,7 +129,10 @@ const Home = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50">
           <div className="container mx-auto h-full flex items-center px-4">
             <div className="text-white max-w-2xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">RVK Engenharia</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 flex items-center">
+  <span className="text-blue-600">RVK</span>
+  <span className="text-white ml-2">Engenharia</span>
+</h1>
               <p className="text-lg md:text-xl mb-8">
               Especialistas em engenharia mecânica e segurança do trabalho. Oferecemos inspeções técnicas e treinamentos para adequação às normas regulamentadoras em Presidente Prudente e região.
               </p>
