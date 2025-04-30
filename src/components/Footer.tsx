@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">RVK Engenharia</h3>
             <p className="text-gray-400 mb-4">
-              Soluções completas em engenharia de segurança do trabalho, com foco em qualidade e excelência técnica.
+            Especialistas em engenharia mecânica e segurança do trabalho, oferecendo soluções completas para adequação às normas regulamentadoras. Atuamos com inspeções técnicas, laudos, treinamentos e consultoria para garantir a segurança e conformidade do seu ambiente industrial.
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
@@ -32,9 +32,6 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-400 hover:text-white">Home</Link>
-              </li>
-              <li>
-                <Link to="/servicos" className="text-gray-400 hover:text-white">Serviços</Link>
               </li>
               <li>
                 <Link to="/clientes" className="text-gray-400 hover:text-white">Clientes</Link>

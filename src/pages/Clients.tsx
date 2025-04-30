@@ -61,7 +61,7 @@ const Clients = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8 md:py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Nossos Clientes</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Clientes que confiaram na RVK</h1>
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8 md:mb-12">
           Nos orgulhamos de atender algumas das maiores empresas do Brasil, 
           fornecendo serviços de excelência em inspeções e segurança industrial.
