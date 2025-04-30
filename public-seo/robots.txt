@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /wp-login.php
+Disallow: /wp-admin/
+
 Sitemap: https://rvk.eng.br/sitemap.xml
