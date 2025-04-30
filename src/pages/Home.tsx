@@ -1,11 +1,71 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef(null);
+
+  const services = [
+    {
+      id: 'nr11',
+      title: 'Inspeções e treinamentos conforme NR-11',
+      description: 'Avaliação e adequação de equipamentos de transporte e movimentação de cargas, como empilhadeiras, guindastes e elevadores.',
+      image: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      id: 'nr12',
+      title: 'Inspeções e treinamentos conforme NR-12',
+      description: 'Inspeção de segurança em máquinas e equipamentos seguindo os requisitos da NR-12.',
+      image: 'https://images.unsplash.com/photo-1738103236196-4448e5b66012?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+      id: 'nr13',
+      title: 'Inspeções e treinamentos conforme NR-13',
+      description: 'Inspeção completa de vasos de pressão, caldeiras, tanques e tubulações conforme a NR-13.',
+      image: 'https://images.unsplash.com/photo-1737870563574-f0a8b33b4395?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+      id: 'nr15',
+      title: 'Inspeções e treinamentos conforme NR-15',
+      description: 'Avaliação de ambientes de trabalho, medições de agentes físicos, químicos e biológicos, e elaboração de laudos de insalubridade.',
+      image: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      id: 'nr18',
+      title: 'Inspeções e treinamentos conforme NR-18',
+      description: 'Implementação de medidas de controle e sistemas preventivos de segurança nos processos e ambientes da construção civil.',
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      id: 'nr35',
+      title: 'Inspeções e treinamentos conforme NR-35',
+      description: 'Treinamentos, procedimentos e análise de riscos para trabalhos em altura, assegurando a proteção dos trabalhadores.',
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'
+    }
+  ];
+
+  // Função para avançar o slide
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+  };
+
+  // Função para voltar o slide
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+  };
+
+  // Auto-play do carrossel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
+      {/* Hero Section - Mantido igual ao original */}
       <div
         className="h-[400px] md:h-[500px] bg-cover bg-center relative"
         style={{
@@ -32,53 +92,99 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Services Preview */}
+      {/* Services Carousel - Substituindo os cards por um carrossel */}
       <div className="container mx-auto py-12 md:py-16 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
           Nossos Serviços
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <Link to="/servicos" className="group">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
-              <img
-                src="https://images.unsplash.com/photo-1737870563574-f0a8b33b4395?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Inspeções NR-13"
-                className="w-full h-48 md:h-64 object-cover"
-              />
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-semibold mb-2">
-                  Inspeções e treinamentos conforme NR-13
-                </h3>
-                <p className="text-gray-600 mb-4 text-sm md:text-base">
-                  Inspeção completa de vasos de pressão, caldeiras, tanques e tubulações conforme a NR-13
-                </p>
-                <span className="text-blue-600 group-hover:text-blue-800 flex items-center gap-2 text-sm md:text-base">
-                  Saiba mais <ArrowRight size={16} />
-                </span>
-              </div>
+        
+        <div className="relative" ref={carouselRef}>
+          {/* Controles do carrossel */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-white p-2 md:p-3 rounded-full shadow-md z-10 hover:bg-gray-100 transition-colors"
+            aria-label="Slide anterior"
+          >
+            <ChevronLeft size={24} className="text-blue-700" />
+          </button>
+          
+          {/* Container do carrossel */}
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {services.map((service, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <Link to={`/servicos-${service.id}`} className="group block">
+                    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform group-hover:scale-105">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-48 md:h-64 object-cover"
+                      />
+                      <div className="p-4 md:p-6">
+                        <h3 className="text-lg md:text-xl font-semibold mb-2">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 mb-4 text-sm md:text-base">
+                          {service.description}
+                        </p>
+                        <span className="text-blue-600 group-hover:text-blue-800 flex items-center gap-2 text-sm md:text-base">
+                          Saiba mais <ArrowRight size={16} />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
-          </Link>
-
-          <Link to="/servicos-nr12" className="group">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
-              <img
-                src="https://images.unsplash.com/photo-1738103236196-4448e5b66012?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Inspeções NR-12"
-                className="w-full h-48 md:h-64 object-cover"
+          </div>
+          
+          <button 
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 bg-white p-2 md:p-3 rounded-full shadow-md z-10 hover:bg-gray-100 transition-colors"
+            aria-label="Próximo slide"
+          >
+            <ChevronRight size={24} className="text-blue-700" />
+          </button>
+          
+          {/* Indicadores */}
+          <div className="flex justify-center mt-8 gap-2">
+            {services.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentSlide === index ? 'bg-blue-700' : 'bg-gray-300'
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
               />
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-semibold mb-2">
-                  Inspeções e treinamentos conforme NR-12
-                </h3>
-                <p className="text-gray-600 mb-4 text-sm md:text-base">
-                  Inspeção de segurança em máquinas e equipamentos seguindo os requisitos da NR-12
-                </p>
-                <span className="text-blue-600 group-hover:text-blue-800 flex items-center gap-2 text-sm md:text-base">
-                  Saiba mais <ArrowRight size={16} />
-                </span>
-              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Sobre a Empresa - Nova seção */}
+      <div className="bg-white py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-md p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Sobre a RVK Engenharia</h2>
+            <p className="text-gray-700 mb-6">
+              A RVK Engenharia é uma empresa especializada em segurança do trabalho, com foco em adequações às normas regulamentadoras. Com uma equipe de profissionais altamente qualificados, oferecemos soluções personalizadas para empresas de diversos segmentos, garantindo a segurança dos trabalhadores e o cumprimento da legislação.
+            </p>
+            <p className="text-gray-700 mb-8">
+              Nossa missão é promover ambientes de trabalho mais seguros e saudáveis, contribuindo para a redução de acidentes e doenças ocupacionais, através de serviços de excelência técnica e comprometimento com a qualidade.
+            </p>
+            <div className="text-center">
+              <Link
+                to="/sobre"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg inline-flex items-center gap-2"
+              >
+                Conheça a nossa história <ArrowRight size={20} />
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
       </div>
     </div>
