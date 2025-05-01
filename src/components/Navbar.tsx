@@ -50,153 +50,160 @@ const Navbar: React.FC = () => {
 
   // Lista de serviços
   const services: ServiceItem[] = [
-    { id: 'nr-11', name: 'NR-11 (Movimentação de Cargas)' },
-    { id: 'nr-12', name: 'NR-12 (Máquinas e Equipamentos)' },
-    { id: 'nr-13', name: 'NR-13 (Caldeiras e Vasos de Pressão)' },
-    { id: 'nr-15', name: 'NR-15 (Insalubridade)' },
-    { id: 'nr-18', name: 'NR-18 (Construção Civil)' },
-    { id: 'nr-35', name: 'NR-35 (Trabalho em Altura)' }
+    { id: 'nr11', name: 'NR-11 (Movimentação de Cargas)' },
+    { id: 'nr12', name: 'NR-12 (Máquinas e Equipamentos)' },
+    { id: 'nr13', name: 'NR-13 (Caldeiras e Vasos de Pressão)' },
+    { id: 'nr15', name: 'NR-15 (Insalubridade)' },
+    { id: 'nr18', name: 'NR-18 (Construção Civil)' },
+    { id: 'nr35', name: 'NR-35 (Trabalho em Altura)' }
   ];
 
   return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-md py-2' 
-          : 'bg-white/90 backdrop-blur-sm py-4'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-blue-700">RVK</span>
-            <span className="text-2xl font-light text-gray-800 ml-1">Engenharia</span>
-          </Link>
+    <>
+      {/* Espaçador para compensar a altura da navbar fixa */}
+      <div className={`h-[70px] md:h-[80px]`}></div>
+      
+      <nav 
+        className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+          scrolled 
+            ? 'bg-white shadow-md py-2' 
+            : 'bg-white/90 backdrop-blur-sm py-4'
+        }`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <span className="text-2xl font-bold text-blue-700">RVK</span>
+              <span className="text-2xl font-light text-gray-800 ml-1">Engenharia</span>
+            </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-1">
-            <NavLink to="/" active={isActive('/')}>
-              Início
-            </NavLink>
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center space-x-1">
+              <NavLink to="/" active={isActive('/')}>
+                Início
+              </NavLink>
+              
+              {/* Dropdown de Serviços */}
+              <div className="relative group">
+                <button 
+                  className={`px-4 py-2 rounded-md flex items-center transition-colors ${
+                    isActive('/servicos') 
+                      ? 'text-blue-700 font-medium' 
+                      : 'text-gray-700 hover:text-blue-700'
+                  }`}
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                >
+                  Serviços
+                  <ChevronDown size={18} className="ml-1" />
+                </button>
+                
+                {/* Dropdown Menu */}
+                <div 
+                  className={`absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg overflow-hidden transition-all origin-top-left z-50 ${
+                    servicesOpen || isActive('/servicos') ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+                  }`}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <div className="py-2">
+                    <div className="border-t border-gray-100 my-1"></div>
+                    {services.map(service => (
+                      <Link 
+                        key={service.id}
+                        to={`/servicos/${service.id}`}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <NavLink to="/sobre" active={isActive('/sobre')}>
+                Sobre
+              </NavLink>
+              
+              <NavLink to="/clientes" active={isActive('/clientes')}>
+                Clientes
+              </NavLink>
+              
+              <NavLink to="/contato" active={isActive('/contato')}>
+                Contato
+              </NavLink>
+              
             
-            {/* Dropdown de Serviços */}
-            <div className="relative group">
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="lg:hidden text-gray-700 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div 
+          className={`lg:hidden bg-white overflow-hidden transition-all duration-300 ${
+            isOpen ? 'max-h-screen shadow-lg' : 'max-h-0'
+          }`}
+        >
+          <div className="container mx-auto px-4 py-2 space-y-1">
+            <MobileNavLink to="/" active={isActive('/')}>
+              Início
+            </MobileNavLink>
+            
+            {/* Mobile Services Dropdown */}
+            <div className="border-b border-gray-100 pb-1">
               <button 
-                className={`px-4 py-2 rounded-md flex items-center transition-colors ${
-                  isActive('/servicos') 
-                    ? 'text-blue-700 font-medium' 
-                    : 'text-gray-700 hover:text-blue-700'
+                className={`w-full text-left px-4 py-3 flex justify-between items-center ${
+                  isActive('/servicos') ? 'text-blue-700 font-medium' : 'text-gray-700'
                 }`}
-                onMouseEnter={() => setServicesOpen(true)}
                 onClick={() => setServicesOpen(!servicesOpen)}
               >
                 Serviços
-                <ChevronDown size={18} className="ml-1" />
+                {servicesOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
               </button>
               
-              {/* Dropdown Menu */}
-              <div 
-                className={`absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg overflow-hidden transition-all origin-top-left z-50 ${
-                  servicesOpen || isActive('/servicos') ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-                }`}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <div className="py-2">
-                 
-                  <div className="border-t border-gray-100 my-1"></div>
-                  {services.map(service => (
-                    <Link 
-                      key={service.id}
-                      to={`/servicos/${service.id}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700"
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
-                </div>
+              <div className={`transition-all duration-300 overflow-hidden ${
+                servicesOpen ? 'max-h-96' : 'max-h-0'
+              }`}>
+                {services.map(service => (
+                  <Link 
+                    key={service.id}
+                    to={`/servicos/${service.id}`}
+                    className="block px-8 py-2 text-gray-600 hover:text-blue-700"
+                  >
+                    {service.name}
+                  </Link>
+                ))}
               </div>
             </div>
             
-            <NavLink to="/sobre" active={isActive('/sobre')}>
+            <MobileNavLink to="/sobre" active={isActive('/sobre')}>
               Sobre
-            </NavLink>
+            </MobileNavLink>
             
-            <NavLink to="/clientes" active={isActive('/clientes')}>
+            <MobileNavLink to="/clientes" active={isActive('/clientes')}>
               Clientes
-            </NavLink>
+            </MobileNavLink>
             
-            <NavLink to="/contato" active={isActive('/contato')}>
+            <MobileNavLink to="/contato" active={isActive('/contato')}>
               Contato
-            </NavLink>
+            </MobileNavLink>
             
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden text-gray-700 focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div 
-        className={`lg:hidden bg-white overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-screen shadow-lg' : 'max-h-0'
-        }`}
-      >
-        <div className="container mx-auto px-4 py-2 space-y-1">
-          <MobileNavLink to="/" active={isActive('/')}>
-            Início
-          </MobileNavLink>
+            <div className="pt-2">
           
-          {/* Mobile Services Dropdown */}
-          <div className="border-b border-gray-100 pb-1">
-            <button 
-              className={`w-full text-left px-4 py-3 flex justify-between items-center ${
-                isActive('/servicos') ? 'text-blue-700 font-medium' : 'text-gray-700'
-              }`}
-              onClick={() => setServicesOpen(!servicesOpen)}
-            >
-              Serviços
-              {servicesOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-            </button>
-            
-            <div className={`transition-all duration-300 overflow-hidden ${
-              servicesOpen ? 'max-h-96' : 'max-h-0'
-            }`}>
-              {services.map(service => (
-                <Link 
-                  key={service.id}
-                  to={`/servicos/${service.id}`}
-                  className="block px-8 py-2 text-gray-600 hover:text-blue-700"
-                >
-                  {service.name}
-                </Link>
-              ))}
             </div>
           </div>
-          
-          <MobileNavLink to="/sobre" active={isActive('/sobre')}>
-            Sobre
-          </MobileNavLink>
-          
-          <MobileNavLink to="/clientes" active={isActive('/clientes')}>
-            Clientes
-          </MobileNavLink>
-          
-          <MobileNavLink to="/contato" active={isActive('/contato')}>
-            Contato
-          </MobileNavLink>
-          
-          
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
