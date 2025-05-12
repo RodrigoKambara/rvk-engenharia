@@ -44,20 +44,21 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Nossa História</h2>
           <p className="text-gray-700 mb-4">
-            Fundada em 2010, a RVK Engenharia nasceu da visão de profissionais experientes em engenharia mecânica 
-            que identificaram a necessidade de serviços especializados em inspeções técnicas e treinamentos para 
-            adequação às normas regulamentadoras no setor industrial.
+            A RVK Engenharia carrega a experiência de uma empresa consolidada, que nasceu como RV Engenharia
+            e, com o tempo, se transformou. A mudança de nome marcou uma nova fase: mais tecnológica, 
+            mais ágil e ainda mais comprometida com o que sempre nos moveu — proteger vidas e garantir
+            ambientes de trabalho seguros.
           </p>
           <p className="text-gray-700 mb-4">
-            Ao longo dos anos, expandimos nossa atuação para abranger diversas normas regulamentadoras, 
-            com foco especial em NR-11, NR-12, NR-13, NR-15, NR-18 e NR-35, desenvolvendo metodologias 
-            próprias para inspeções técnicas e treinamentos que garantem a segurança e conformidade dos 
-            equipamentos e processos industriais.
+            Mantemos o legado técnico e a confiança conquistada ao longo dos anos, agora com uma
+            atuação ainda mais estratégica e voltada à inovação. Atuamos com excelência em inspeções,
+            adequações e treinamentos conforme as NRs 11, 12, 13, 15, 18 e 35, atendendo hospitais,
+            clínicas, frigoríficos, laboratórios, metalúrgicas e empresas de transporte de pessoas.
           </p>
           <p className="text-gray-700">
-            Hoje, somos reconhecidos pela excelência técnica e comprometimento com a segurança, 
-            atendendo empresas de diversos segmentos em Presidente Prudente e região, com uma 
-            equipe de engenheiros mecânicos e de segurança do trabalho altamente qualificados.
+            Na RVK Engenharia, acreditamos que segurança não é um diferencial — é um dever. Por isso,
+            oferecemos soluções que unem conhecimento, proximidade e propósito: cuidar de pessoas por 
+            meio da engenharia.
           </p>
         </div>
       </div>
@@ -124,13 +125,7 @@ const About = () => {
       {/* Nossa Equipe */}
       <div className="container mx-auto py-12 md:py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Nossa Equipe</h2>
-          <p className="text-gray-700 mb-6">
-            Contamos com uma equipe multidisciplinar de engenheiros mecânicos e engenheiros de segurança 
-            do trabalho, todos com formação especializada e certificações nas áreas de atuação. Nossos 
-            profissionais possuem ampla experiência em inspeções técnicas e ministração de treinamentos 
-            para as diversas normas regulamentadoras.
-          </p>
+          
           <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 rounded-r-lg">
             <h3 className="text-xl font-semibold mb-3">Qualificações da nossa equipe:</h3>
             <ul className="space-y-2">
@@ -173,6 +168,10 @@ const About = () => {
               <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-4 text-blue-700">Inspeções Técnicas</h3>
                 <ul className="space-y-3">
+                <li className="flex items-start">
+                    <CheckCircle className="text-blue-600 w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Inspeção de equipamentos de transporte (NR-11)</span>
+                  </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-blue-600 w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
                     <span>Inspeção de máquinas e equipamentos (NR-12)</span>
@@ -180,10 +179,6 @@ const About = () => {
                   <li className="flex items-start">
                     <CheckCircle className="text-blue-600 w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
                     <span>Inspeção de caldeiras e vasos de pressão (NR-13)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-blue-600 w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Inspeção de equipamentos de transporte (NR-11)</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-blue-600 w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />

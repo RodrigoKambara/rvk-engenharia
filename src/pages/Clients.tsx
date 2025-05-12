@@ -62,7 +62,7 @@ const Clients = () => {
   return (
     <>
       <Helmet>
-        <title>Nossos Clientes | Empresas que Confiam na RVK Engenharia</title>
+        <title>Nossos Clientes | Empresas que já confiaram na RVK Engenharia</title>
         <meta name="description" content="Conheça as empresas que confiam nos serviços da RVK Engenharia para inspeções e treinamentos em normas regulamentadoras. Casos de sucesso em Presidente Prudente e região." />
         <meta name="keywords" content="clientes RVK Engenharia, empresas atendidas, casos de sucesso, inspeções realizadas, depoimentos clientes, Presidente Prudente" />
         <link rel="canonical" href="https://rvk.eng.br/clientes/" />
