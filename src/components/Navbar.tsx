@@ -101,9 +101,8 @@ const Navbar: React.FC = () => {
                 
                 {/* Dropdown Menu */}
                 <div 
-                  className={`absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg overflow-hidden transition-all origin-top-left z-50 ${
-                    servicesOpen || isActive('/servicos') ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-                  }`}
+                  className={`absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg overflow-hidden transition-all origin-top-left z-50 ${servicesOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
+                  `}
                   onMouseLeave={() => setServicesOpen(false)}
                 >
                   <div className="py-2">
