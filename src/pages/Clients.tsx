@@ -20,8 +20,8 @@ const Clients = () => {
       logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738614778/oestesaude_umnjk4.jpg"
     },
     {
-      name: "Palmali",
-      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1738606853/palmali_hhycnu.webp"
+      name: "Selas Pro Horse",
+      logo: "https://res.cloudinary.com/doj643kma/image/upload/v1748308620/LOGO_PROHORSE_1_a7tpfl.webp"
     },
     {
       name: "SOESP",
@@ -99,15 +99,16 @@ const Clients = () => {
               key={index}
               className="bg-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col items-center justify-center transform transition-transform hover:scale-105"
             >
-              <div className="h-16 flex items-center justify-center mb-4">
-                <img 
-                  src={client.logo}
-                  alt={`Logo ${client.name}`}
-                  className="h-full w-auto object-contain transition-opacity duration-300"
-                  onError={handleImageError}
-                  loading="lazy"
-                />
-              </div>
+              <div className="w-40 h-24 flex items-center justify-center mb-4">
+  <img 
+    src={client.logo}
+    alt={`Logo ${client.name}`}
+    className="max-h-full max-w-full object-contain transition-opacity duration-300"
+    onError={handleImageError}
+    loading="lazy"
+  />
+</div>
+
               <h3 className="text-lg font-semibold text-center mb-2">{client.name}</h3>
             </div>
           ))}
